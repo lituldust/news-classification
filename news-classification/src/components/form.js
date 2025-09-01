@@ -1,6 +1,8 @@
 'use client'
 import React, { useState } from "react";
 
+const API_URL = process.env.REACT_APP_API_URL
+
 const Form = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -27,7 +29,14 @@ const Form = () => {
         return;
     }
 
-    const url = "http://localhost:5000/predict";
+    if (!API_URL) {
+      const url = "http://localhost:5000/predict";
+      console.warn("REACT_APP_API_URL is not set. Defaulting to localhost:", url);
+    } else {
+      const url = "http://news-classification-production.up.railway.app:5000/predict";
+      console.log("Using API URL from environment:", url);
+    }
+
     setIsLoading(true);
     setError(""); 
     setResult(""); 
