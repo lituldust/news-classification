@@ -134,7 +134,7 @@ const Form = () => {
             <h3 className="text-lg font-semibold text-slate-300 mb-2">Result:</h3>
             {error && <p className="text-red-400 font-medium">{error}</p>}
             {result && (
-              <p className={`text-2xl font-bold capitalize ${result === 'Fake' ? 'text-red-400' : 'text-green-400'}`}>{result}</p>
+              <p className={`text-2xl font-bold capitalize ${result === 'fake' ? 'text-red-400' : 'text-green-400'}`}>{result}</p>
             )}
           </div>
         )}
