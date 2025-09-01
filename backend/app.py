@@ -18,7 +18,7 @@ import os
 
 app = Flask(__name__)
 
-CORS(app,origins=["https://news-classification-cyan.vercel.app/"])
+CORS(app,resources={r"/*":{"origins":"*"}})
 
 model =  pickle.load(open('model.pkl', 'rb'))
 lemmatizer = WordNetLemmatizer()
