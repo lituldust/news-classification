@@ -7,6 +7,7 @@ from nltk.corpus import wordnet
 from nltk.tokenize import word_tokenize
 from flask_cors import CORS
 import pickle
+import os
 
 # Uncomment the lines below if running for the first time to download necessary NLTK data files
 # nltk.download('stopwords')
@@ -97,4 +98,5 @@ def predict():
         return jsonify({'error': str(e)})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5000)
+    port = int(os.environ.get("PORT", 5000))  # ambil port dari Railway
+    app.run(host="0.0.0.0", port=port)
