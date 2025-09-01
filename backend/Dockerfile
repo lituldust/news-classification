@@ -11,7 +11,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt gunicorn
 
 # Install nltk data
-RUN python -m nltk.downloader punkt-tab wordnet stopwords averaged_perceptron_tagger averaged_perceptron_tagger_eng
+RUN python -m nltk.downloader punkt-tab wordnet stopwords averaged_perceptron_tagger
 
 COPY . .
 
