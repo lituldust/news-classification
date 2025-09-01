@@ -13,4 +13,4 @@ RUN pip install --no-cache-dir -r requirements.txt gunicorn
 COPY . .
 
 # Run app.py when the container launches using gunicorn
-CMD gunicorn --bind 0.0.0.0:$PORT app:app
+CMD exec gunicorn run:app --bind 0.0.0.0:$PORT --workers 1
