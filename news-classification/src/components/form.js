@@ -12,6 +12,10 @@ const Form = () => {
   const [result, setResult] = useState("");
   const [error, setError] = useState(""); 
 
+  useEffect(() => {
+    console.log("API_URL:", API_URL);
+  }, []);
+
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormData(prevData => ({
@@ -28,8 +32,6 @@ const Form = () => {
         setResult(""); 
         return;
     }
-
-    console.log("API_URL:", API_URL);
 
     setIsLoading(true);
     setError(""); 
