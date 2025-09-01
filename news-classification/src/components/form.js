@@ -1,6 +1,8 @@
 'use client'
 import React, { useState } from "react";
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 const Form = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -27,7 +29,8 @@ const Form = () => {
         return;
     }
 
-    const API_URL = process.env.NEXT_PUBLIC_API_URL;
+    console.log("API_URL:", API_URL);
+
     setIsLoading(true);
     setError(""); 
     setResult(""); 
