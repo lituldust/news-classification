@@ -10,9 +10,6 @@ COPY requirements.txt .
 # Install any needed packages specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt gunicorn
 
-# Install nltk data
-RUN python -m nltk.downloader punkt-tab wordnet stopwords averaged_perceptron_tagger
-
 COPY . .
 
 # Run app.py when the container launches using gunicorn
